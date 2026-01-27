@@ -21,6 +21,15 @@ using namespace fastjet;
 int main(int argv, char* argc[])
 {
     int Nevent = atoi(argc[1]);
+    int job_id = atoi(argv[2]);             // This is the job ID (0 to N-1)
+    int batch_number = atoi(argv[3]);       // Batch number for unique output names
+
+    // Handle optional output path
+    string output_path = "/eos/cms/store/group/phys_heavyions/xiaoyul/wenbin/sample/pp_parton_cascade";
+    if (argc == 5) {
+        output_path = string(argv[4]);
+    }
+
     // selection for final particles which are used to reconstruct jet
     double absetamax = 2.4;
     double particle_ptmin = 0.3; // CMS cut, CMS PAS HIN-21-013
@@ -51,7 +60,10 @@ int main(int argv, char* argc[])
     }
     */
     // open file for output
-    std::string binary_output_filename = "final_state_hard_hadrons.bin";
+    std::ostringstream oss;
+    oss << output_path << "/final_state_hard_hadrons"
+    << "_batch" << batch_number << "_" << job_id << ".bin";
+    std::string binary_output_filename = oss.str();
     remove(binary_output_filename.c_str());
     FILE *outbin = NULL;
     outbin = fopen(binary_output_filename.c_str(), "wb");

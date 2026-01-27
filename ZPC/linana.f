@@ -3914,9 +3914,9 @@ c
          READ (97,*) ityp0(ipar),px0(ipar),py0(ipar),pz0(ipar),e0(ipar),
      1        gx0(ipar),gy0(ipar),gz0(ipar),ft0(ipar),
      2        icolr0(ipar,1),icolr0(ipar,2)
-         gx0(ipar) = px0(ipar)/e0(ipar) * ft0(ipar)
-         gy0(ipar) = py0(ipar)/e0(ipar) * ft0(ipar)
-         gz0(ipar) = pz0(ipar)/e0(ipar) * ft0(ipar)
+c         gx0(ipar) = px0(ipar)/e0(ipar) * ft0(ipar)
+c         gy0(ipar) = py0(ipar)/e0(ipar) * ft0(ipar)
+c         gz0(ipar) = pz0(ipar)/e0(ipar) * ft0(ipar)
 clin-10/2023 add color tracking above.
          xmass0(ipar)=dble(ulmass(ityp0(ipar)))
 c     Recalculate e0 to take of finite accuracy of the input file:

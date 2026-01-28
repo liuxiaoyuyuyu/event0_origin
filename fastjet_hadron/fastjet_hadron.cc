@@ -18,7 +18,7 @@
 using namespace std;
 using namespace fastjet;
 
-int main(int argv, char* argc[])
+int main(int argc, char* argv[])
 {
     if (argc < 4 || argc > 5) {
         cout << "Usage: " << argv[0] << " <nevent> <job_id> <batch_number> [output_path]" << endl;
@@ -27,7 +27,7 @@ int main(int argv, char* argc[])
         return 1;
     }
     
-    int Nevent = atoi(argc[1]);
+    int Nevent = atoi(argv[1]);
     int job_id = atoi(argv[2]);             // This is the job ID (0 to N-1)
     int batch_number = atoi(argv[3]);       // Batch number for unique output names
 

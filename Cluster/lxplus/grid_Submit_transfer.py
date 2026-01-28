@@ -138,7 +138,7 @@ cd ../urqmd_code
     # script to run urqmd
     cd osc2u
     ln -sf ../../fragmentation/hadrons_frag1.dat ./
-    ./osc2u.e < hadrons_frag1.dat > run.log
+    ./run_osc2u_safe.sh hadrons_frag1.dat 
     rm -r ../../fragmentation/hadrons_frag1.dat
     mv fort.14 ../urqmd/OSCAR.input
     cd ../urqmd

@@ -126,7 +126,6 @@ sed "s/^10[[:space:]]*![[:space:]]*NEVNT/{nevent}            ! NEVNT/" > input_c
 # Replace the original input.ampt with our custom one
 cp input_custom.ampt input.ampt
 echo $HIJING_SEED | ./exec
-
 cd ../
 
 # fragmentation and urqmd
@@ -139,7 +138,7 @@ cd ../urqmd_code
     # script to run urqmd
     cd osc2u
     ln -sf ../../fragmentation/hadrons_frag1.dat ./
-    ./run_osc2u_safe.sh hadrons_frag1.dat
+    ./osc2u.e < hadrons_frag1.dat > run.log
     rm -r ../../fragmentation/hadrons_frag1.dat
     mv fort.14 ../urqmd/OSCAR.input
     cd ../urqmd

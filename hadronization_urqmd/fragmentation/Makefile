@@ -1,11 +1,8 @@
 EXE=main_string_fragmentation
 GCC=g++
 
-PYTHIAINC=${shell /wsu/home/he/he92/he9215/soft_ware/Pythia8_package/pythia8310_install/bin/pythia8-config --includedir}
-PYTHIALIBS=${shell /wsu/home/he/he92/he9215/soft_ware/Pythia8_package/pythia8310_install/bin/pythia8-config --libdir}
-
-
-
+PYTHIAINC=${shell /afs/cern.ch/user/x/xiaoyul/pythia8310_install/bin/pythia8-config --includedir}
+PYTHIALIBS=${shell /afs/cern.ch/user/x/xiaoyul/pythia8310_install/bin/pythia8-config --libdir}
 
 all: $(EXE)
 
